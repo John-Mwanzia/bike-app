@@ -9,8 +9,9 @@ function App() {
   return (
     <>
         <Header />
-        <div >
-       <Image />
+       
+        <div className="body-content">
+        <Image />
        <Content />
        <Input />
         </div>

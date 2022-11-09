@@ -10,14 +10,25 @@
 body{
     padding: 0 16px;
     overflow: hidden;
+    background-color: #0000cc;
+    background-color: #e6e8df;
+    background-color: #2944ad;
+    background-image: url("https://www.transparenttextures.com/patterns/padded-light.png");
+    /* background-image: url("https://www.transparenttextures.com/patterns/polonez-pattern.png"); */
+
+
 
 }
 
 img{
-    position: absolute;
     max-width: 40%;
     height: 450px;
     bottom: 20px;
+    margin-top: 16px;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
 }
 
 
@@ -39,8 +50,9 @@ header {
   .input-content{
     margin-bottom: 20px;
     margin-top: 20px;
-    display: flex;
-    justify-content: end;
+    color: white;
+    /* display: flex;
+    justify-content: center; */
     margin-right: 40px;
     font-size: larger;
 
@@ -50,6 +62,7 @@ header {
   .input-content input{
     margin-right: 10px;
     margin-left: 10px;
+    margin-bottom: 20px;
     padding: 5px 5px;
     border-radius: .5rem;
   }
@@ -64,11 +77,28 @@ header {
     font-weight: 200;
   }
 
+  .body-content{
+    display: flex;
+    justify-content: center;
+  }
+
   .collected-Amount{
-    height: 70px;
+    height: auto;
     width: 70pxx;
     background-color: #f5ba13;
-    padding-top: 15px;
+    padding-top:auto;
+    padding-left: 30px;
+    border-radius: .5rem;
+    margin-top: 20px;
+  }
+
+  button{
+    background-color:rgb(0, 255, 72);
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: .5rem;
+    margin-left: 10px;
   }
 footer{
     position: absolute;

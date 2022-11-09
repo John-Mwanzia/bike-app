@@ -15,6 +15,7 @@ function Input(){
             return[...prevAmount, amount]
            
          });
+         alert("submitted successfully👍✔");
         
      event.preventDefault();
     }
@@ -35,7 +36,7 @@ function Input(){
         <form>
        
         <label>Enter amount Charged :  </label>
-         <input onChange = {handleChange} type="number" />
+         <input onChange = {handleChange} type="number" step={10} />
          <button onClick={handleclick}>submit</button>
           
         </form>
@@ -43,8 +44,8 @@ function Input(){
         <button onClick={hanldeCollect}>Get Total</button>
 
         <div className="collected-Amount"> 
-        <h1>Amount Collected </h1>
-        <h1>{addAmount}</h1>
+        <h1>Amount Collected :  </h1>
+        <h1>Ksh.{addAmount}</h1>
         </div>
       
         </div>
