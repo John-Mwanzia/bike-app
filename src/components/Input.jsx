@@ -33,7 +33,7 @@ function Input(){
     }
 
     function handleReset(){
-        setaddAmount(0)    //at the end of the day reset total amount to zero before starting another day or else you can continue combining your total
+        setaddAmount(0)    //at the end of the day reset total amount to zero before starting another day or else you can continue combining your t
     }
 
     return(
