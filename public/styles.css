@@ -92,6 +92,10 @@ header {
     margin-top: 20px;
   }
 
+  .collected-Amount button{
+    float: right;
+  }
+
   button{
     background-color:rgb(0, 255, 72);
     color: white;

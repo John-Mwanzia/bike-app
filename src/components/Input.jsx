@@ -6,7 +6,8 @@ function Input(){
     const [addAmount, setaddAmount] = useState()
 
     function handleChange(event){
-       setAmount(parseInt(event.target.value));
+       setAmount(parseInt(event.target.value));   //    Input values are always sent to you as Strings, no matter the input type. When you use input type="number" it only helps the browser to present a number keypad.
+                                                 //    You either have to cast the value to Int parseInt(myValue) before calling your action or inside the action itself.
     
     }
 
@@ -31,6 +32,10 @@ function Input(){
         console.log(total);
     }
 
+    function handleReset(){
+        setaddAmount(0)    //at the end of the day reset total amount to zero before starting another day or else you can continue combining your total
+    }
+
     return(
         <div className="input-content">
         <form>
@@ -46,6 +51,7 @@ function Input(){
         <div className="collected-Amount"> 
         <h1>Amount Collected :  </h1>
         <h1>Ksh.{addAmount}</h1>
+        <button onClick={handleReset}>Reset Amount</button>
         </div>
       
         </div>
