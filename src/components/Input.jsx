@@ -21,7 +21,7 @@ function Input(){
      event.preventDefault();
     }
 
-    function hanldeCollect(){
+    function handleCollect(){
         let total = 0;
         // setaddAmount(collectedAmount)
         collectedAmount.forEach(amountFound=>{
@@ -29,7 +29,7 @@ function Input(){
             
         });
         setaddAmount(total)
-        console.log(total);
+        
     }
 
     function handleReset(){
@@ -46,7 +46,7 @@ function Input(){
           
         </form>
         <label>Total Earned:</label>
-        <button onClick={hanldeCollect}>Get Total</button>
+        <button onClick={handleCollect}>Get Total</button>
 
         <div className="collected-Amount"> 
         <h1>Amount Collected :  </h1>
