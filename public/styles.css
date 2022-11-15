@@ -8,6 +8,7 @@
   }
 
 body{
+  display: flex;
     padding: 0 16px;
     overflow: hidden;
     overflow-x: hidden;
@@ -17,7 +18,7 @@ body{
     background-image: url("https://www.transparenttextures.com/patterns/padded-light.png");
     /* background-image: url("https://www.transparenttextures.com/patterns/polonez-pattern.png"); */
 
-
+ min-height: 100vh;
 
 }
 
@@ -80,6 +81,7 @@ header {
   .body-content{
     display: flex;
     justify-content: center;
+    flex-grow: 1;
   }
 
   .collected-Amount{
@@ -138,9 +140,9 @@ header {
   margin: auto;
  
 }
-footer{
+/* footer{
 visibility: hidden;
-}
+} */
 
   .input-content{
   text-align: center;
