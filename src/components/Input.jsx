@@ -45,9 +45,10 @@ function Input(){
          <button onClick={handleclick}>submit</button>
           
         </form>
+        <div className="get-total">
         <label>Total Earned:</label>
         <button onClick={handleCollect}>Get Total</button>
-
+        </div>
         <div className="collected-Amount"> 
         <h1>Amount Collected :  </h1>
         <h1>Ksh.{addAmount}</h1>
