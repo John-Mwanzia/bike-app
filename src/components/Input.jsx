@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 function Input(){
-    const [amount, setAmount] = useState();
+    const [amount, setAmount] = useState(0);
     const [collectedAmount, setcollectedAmount] = useState([]);
-    const [addAmount, setaddAmount] = useState()
+    const [addAmount, setaddAmount] = useState(0)
 
     function handleChange(event){
        setAmount(parseInt(event.target.value));   //    Input values are always sent to you as Strings, no matter the input type. When you use input type="number" it only helps the browser to present a number keypad.
@@ -17,13 +17,12 @@ function Input(){
            
          });
          alert("submitted successfully👍✔");
-        
-     event.preventDefault();
+          event.preventDefault(); //prevent page refresh
+        //   setAmount("");
     }
 
     function handleCollect(){
         let total = 0;
-        // setaddAmount(collectedAmount)
         collectedAmount.forEach(amountFound=>{
             return total += amountFound;
             
@@ -32,8 +31,13 @@ function Input(){
         
     }
 
+    //at the end of the day reset total amount to zero before starting another day or else you can continue combining your totals
     function handleReset(){
-        setaddAmount(0)    //at the end of the day reset total amount to zero before starting another day or else you can continue combining your t
+      setcollectedAmount( collectedAmount.filter(item =>{  //return none of the items in the array
+        return false;
+       })  
+       ) 
+       setaddAmount(0);
     }
 
     return(
@@ -41,8 +45,8 @@ function Input(){
         <form>
        
         <label>Enter amount Charged :  </label>
-         <input onChange = {handleChange} type="number" step={10} />
-         <button onClick={handleclick}>submit</button>
+         <input onChange = {handleChange} type="number"  step={10} />
+         <button onClick={handleclick} type="submit">submit</button>
           
         </form>
         <div className="get-total">

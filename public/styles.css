@@ -18,7 +18,7 @@ body{
     background-image: url("https://www.transparenttextures.com/patterns/padded-light.png");
     /* background-image: url("https://www.transparenttextures.com/patterns/polonez-pattern.png"); */
 
- min-height: 100vh;
+ /* min-height: 100vh; */
 
 }
 
@@ -67,6 +67,7 @@ header {
     margin-left: 2px;
     padding: 5px 5px;
     border-radius: .5rem;
+    border: none;
   }
 
 
@@ -164,3 +165,5 @@ header {
    
   }
   }
+
+  
