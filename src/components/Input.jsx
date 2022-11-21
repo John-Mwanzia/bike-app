@@ -22,11 +22,15 @@ function Input(){
     }
 
     function handleCollect(){
-        let total = 0;
-        collectedAmount.forEach(amountFound=>{
-            return total += amountFound;
+        // let total = 0;
+        // collectedAmount.forEach(amountFound=>{
+        //     return total += amountFound;
             
-        });
+        // });
+
+      const total = collectedAmount.reduce((a, c)=>{  //used reduced function instead of regular forEach method
+            return a + c;
+        }, 0);
         setaddAmount(total)
         
     }
