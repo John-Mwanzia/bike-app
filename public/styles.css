@@ -92,11 +92,13 @@ header {
   .collected-Amount{
     height: auto;
     width: 100%;
-    background-color: #f5ba13;
+    background-color:#f5ba13  ;
     padding-top:auto;
     padding-left: 30px;
     border-radius: .5rem;
     margin-top: 20px;
+
+    box-shadow: 0 0 10px  rgba(234, 242, 243, 0.7);
   }
 
   .collected-Amount button{
