@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Input(){
     const [amount, setAmount] = useState(0);
-    const [collectedAmount, setcollectedAmount] = useState([]);
+    const [collectedAmount, setcollectedAmount] = useState(localStorage.getItem('collectedAmount') ? JSON.parse(localStorage.getItem('collectedAmount')) : []);
     const [addAmount, setaddAmount] = useState(0)
+
+    useEffect(()=>{
+      const data = localStorage.getItem('collectedAmount')
+      const subTotal = localStorage.getItem('addAmount')
+      setaddAmount(subTotal)
+      console.log(data);
+
+    }, []);
+
+    useEffect(()=>{
+      localStorage.setItem('collectedAmount', JSON.stringify(collectedAmount))
+    }, [collectedAmount])
 
     function handleChange(event){
        setAmount(parseInt(event.target.value));   //    Input values are always sent to you as Strings, no matter the input type. When you use input type="number" it only helps the browser to present a number keypad.
@@ -12,13 +24,16 @@ function Input(){
     }
 
     function handleclick(event){
+     
          setcollectedAmount(prevAmount=>{
+          
             return[...prevAmount, amount]
            
          });
+         
          alert("submitted successfully👍✔");
           event.preventDefault(); //prevent page refresh
-        //   setAmount("");
+      
     }
 
     function handleCollect(){
@@ -28,9 +43,11 @@ function Input(){
             
         // });
 
-      const total = collectedAmount.reduce((a, c)=>{  //used reduced function instead of regular forEach method
+      const total = collectedAmount.reduce((a, c)=>{  //used reduce function instead of regular forEach method
+        
             return a + c;
         }, 0);
+        localStorage.setItem('addAmount', JSON.stringify(total))
         setaddAmount(total)
         
     }
