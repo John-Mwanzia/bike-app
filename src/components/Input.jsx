@@ -59,6 +59,8 @@ function Input(){
        })  
        ) 
        setaddAmount(0);
+       localStorage.removeItem("addAmount");
+       
     }
 
     return(
