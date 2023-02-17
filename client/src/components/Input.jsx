@@ -33,6 +33,7 @@ function Input(){
          
          alert("submitted successfully👍✔");
           event.preventDefault(); //prevent page refresh
+          
       
     }
 
@@ -68,7 +69,7 @@ function Input(){
         <form>
        
         <label>Enter amount Charged :  </label>
-         <input onChange = {handleChange} type="number"  step={10} />
+         <input onChange = {handleChange} type="number" step={10} />
          <button onClick={handleclick} type="submit">submit</button>
           
         </form>
