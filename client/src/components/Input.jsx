@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function Input(){
     const [amount, setAmount] = useState(0);
@@ -20,7 +21,9 @@ function Input(){
     function handleChange(event){
        setAmount(parseInt(event.target.value));   //    Input values are always sent to you as Strings, no matter the input type. When you use input type="number" it only helps the browser to present a number keypad.
                                                  //    You either have to cast the value to Int parseInt(myValue) before calling your action or inside the action itself.
-    
+      axios.post("/api/amount", {
+        Amount: amount
+      })
     }
 
     function handleclick(event){
