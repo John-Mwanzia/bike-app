@@ -1,6 +1,6 @@
 {
   "name": "server-side",
-   "type": "module",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.2"
   }
 }

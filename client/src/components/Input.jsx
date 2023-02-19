@@ -19,11 +19,10 @@ function Input(){
     }, [collectedAmount])
 
     function handleChange(event){
-       setAmount(parseInt(event.target.value));   //    Input values are always sent to you as Strings, no matter the input type. When you use input type="number" it only helps the browser to present a number keypad.
+       setAmount(Number(event.target.value));   //    Input values are always sent to you as Strings, no matter the input type. When you use input type="number" it only helps the browser to present a number keypad.
                                                  //    You either have to cast the value to Int parseInt(myValue) before calling your action or inside the action itself.
-      axios.post("/api/amount", {
-        Amount: amount
-      })
+
+      
     }
 
     function handleclick(event){
@@ -36,6 +35,18 @@ function Input(){
          
          alert("submitted successfully👍✔");
           event.preventDefault(); //prevent page refresh
+
+                                          
+      axios.post("http://localhost:5000/amount", {
+        amount: Number(amount)
+        
+      })
+      .then(response =>{
+        console.log(response.data);
+      })
+      .catch(error=>{
+        console.log(error);
+      })
           
       
     }
@@ -72,7 +83,7 @@ function Input(){
         <form>
        
         <label>Enter amount Charged :  </label>
-         <input onChange = {handleChange} type="number" step={10} />
+         <input onChange = {handleChange} type="number" />
          <button onClick={handleclick} type="submit">submit</button>
           
         </form>
